@@ -1,0 +1,16 @@
+<?php
+
+
+try
+{
+	$pdo = new PDO('mysql:host=localhost;dbname=Adaptive_Rec_System', 'root','mysql');
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$pdo->exec('SET NAMES "utf8"');
+}
+catch (PDOException $e)
+{
+	$error = 'A connection with the database failed.'.$e;
+	include 'error.html.php';
+	exit();
+}
+?>
